@@ -9,17 +9,17 @@ The aforementioned current work involves analyzing the SeaFlow Data to explore a
 
 Primarily build by:
 
-[Abhigyan Kaustubh] 
-[Elton Dias]
-[Tanmay Modak]
+[Abhigyan Kaustubh](www.linkedin.com/in/abhigyankaustubh/en)
+[Elton Dias](www.linkedin.com/in/eltondias/en)
+[Tanmay Modak](www.linkedin.com/pub/tanmay-modak/58/537/a2b/en)
 
 This repo was compiled by [Abhigyan Kaustubh](www.linkedin.com/in/abhigyankaustubh/en) 
 
 ###Stakeholders
 
 1. UW	Oceanography	Researchers	(eScience	Institute)
-2. Bill	Howe (eScience	Institute,	UW	CSE)
-3. Sophie	Clayton,	UW	Oceanography
+2. [Bill	Howe (eScience	Institute,	UW	CSE)](www.linkedin.com/in/billghowe/en)
+3. [Sophie	Clayton,	UW	Oceanography](www.linkedin.com/in/sophieaclayton/en)
 
 ###Project Background
 
