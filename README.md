@@ -17,11 +17,11 @@ This repo was compiled by [Abhigyan Kaustubh](www.linkedin.com/in/abhigyankaustu
 
 ###Stakeholders
 
-1. [Bill	Howe (eScience	Institute,	UW	CSE)](www.linkedin.com/in/billghowe/en)
-2. [Sophie	Clayton,	UW	Oceanography](www.linkedin.com/in/sophieaclayton/en)
-3. [Jeremy Hyrkas](https://github.com/jhyrkas)
-4. [Daniel Halperin](https://github.com/dhalperi)
-5. UW	Oceanography	Researchers	(eScience	Institute)
+1. [Bill	Howe](www.linkedin.com/in/billghowe/en), eScience	Institute,	UW	CSE
+2. [Sophie	Clayton](www.linkedin.com/in/sophieaclayton/en), UW	Oceanography
+3. [Jeremy Hyrkas](https://github.com/jhyrkas), UW CSE
+4. [Daniel Halperin](https://github.com/dhalperi), UW CSE
+5. UW	Oceanography Researchers	(eScience	Institute)
 
 ###Project Background
 
