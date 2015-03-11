@@ -1,6 +1,4 @@
 #Data Files are very large (40 MB) - repo limit is 100 MB
 
-Data/*
-!Data/.gitkeep
-
 Icon
+.DS_Store
