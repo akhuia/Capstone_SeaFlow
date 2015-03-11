@@ -1,4 +1,4 @@
-#Capstone_Seaflow
+##Phase 1 Docs
 
 This directory consists of the documents pertaining to the 1st phase of the project (before the project was decided).
 
