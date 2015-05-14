@@ -73,18 +73,18 @@ def Compute_KMeans(f,K):
     figure_title = "Component 1"
     
     plt.subplot(2,3,1)
-    plt.scatter(PCA_Data[:,0],PCA_Data[:,1], s=15, c=kmeans.labels_)
+    plt.scatter(PCA_Data[:,0],PCA_Data[:,1], s=15, c=kmeans.labels_, edgecolor='none')
     plt.xlabel("EVal 0 - EigenVector 1")
     plt.ylabel("EVal 0 - EigenVector 2")  
 
     ax = plt.subplot(2,3,2)
     plt.subplot(2,3,2)
-    plt.scatter(PCA_Data[:,1],PCA_Data[:,2], s=15, c=kmeans.labels_)
+    plt.scatter(PCA_Data[:,1],PCA_Data[:,2], s=15, c=kmeans.labels_, edgecolor='none')
     plt.xlabel("EVal 0 - EigenVector 2")
     plt.ylabel("EVal 0 - EigenVector 3")     
         
     plt.subplot(2,3,3)
-    plt.scatter(PCA_Data[:,0],PCA_Data[:,2], s=15, c=kmeans.labels_)
+    plt.scatter(PCA_Data[:,0],PCA_Data[:,2], s=15, c=kmeans.labels_, edgecolor='none')
     plt.xlabel("EVal 0 - EigenVector 1")
     plt.ylabel("EVal 0 - EigenVector 3") 
    
@@ -98,18 +98,18 @@ def Compute_KMeans(f,K):
     figure_title = "Component 2"
 
     plt.subplot(2,3,4)
-    plt.scatter(PCA_Data[:,3],PCA_Data[:,4], s=15, c=kmeans.labels_)
+    plt.scatter(PCA_Data[:,3],PCA_Data[:,4], s=15, c=kmeans.labels_, edgecolor='none')
     plt.xlabel("EVal 1- EigenVector 1")
     plt.ylabel("EVal 1 - EigenVector 2")  
 
     ax = plt.subplot(2,3,5)
     plt.subplot(2,3,5)
-    plt.scatter(PCA_Data[:,4],PCA_Data[:,5], s=15, c=kmeans.labels_)
+    plt.scatter(PCA_Data[:,4],PCA_Data[:,5], s=15, c=kmeans.labels_, edgecolor='none')
     plt.xlabel("EVal 1 - EigenVector 2")
     plt.ylabel("EVal 1 - EigenVector 3")  
 
     plt.subplot(2,3,6)
-    plt.scatter(PCA_Data[:,3],PCA_Data[:,5], s=15, c=kmeans.labels_)
+    plt.scatter(PCA_Data[:,3],PCA_Data[:,5], s=15, c=kmeans.labels_, edgecolor='none')
     plt.xlabel("EVal 1 - EigenVector 1")
     plt.ylabel("EVal 1 - EigenVector 3")  
 
