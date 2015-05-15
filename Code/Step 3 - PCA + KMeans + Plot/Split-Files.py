@@ -1,4 +1,13 @@
-f = open('LAtest_5.txt')
+#Date: 5/4/2015
+#Description: Pipeline - Downloads File - Splits File by (Cruise-Day-File_Id)
+
+from pandas.io.parsers import read_csv
+import pandas as pd
+import urllib
+
+# Command Line - USE wget.exe -O <FileToStoreURLContents> --no-check-certificate <URL>
+
+f = open('C:\\Users\\NYU\\Cap\\seaflow_data.csv')
 header = f.readline()
 s = set()
 count = 0
@@ -21,3 +30,6 @@ for line in f:
     print count
 
 f.close()
+
+if __name__ == "__main__":
+ main()
