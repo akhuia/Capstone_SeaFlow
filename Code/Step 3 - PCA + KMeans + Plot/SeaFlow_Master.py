@@ -155,6 +155,7 @@ def main():
     for i in FileList:
         Dict_KMeans = Counter(Dict_KMeans) + Counter(Create_Principal_Components(i)) 
     FinalMatrix = pd.DataFrame(Dict_KMeans, columns=['day','file','Eigenvalue0','Eigenvector01','Eigenvector02','Eigenvector03','Eigenvalue1','Eigenvector11','Eigenvector12','Eigenvector13'])
+    FinalMatrix.to_csv(OPFile)
     EnvVarFile = pd.read_csv(EnvironmentVariables, usecols=['day','file','LAT','LON','OCEANTEMP','SALINITY'])
     MergedFile = pd.merge(FinalMatrix,EnvVarFile, on=['day','file'])
     MergedFile.to_csv(MergedFilePath)
