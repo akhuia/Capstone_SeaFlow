@@ -138,7 +138,8 @@ def Compute_KMeans(f,K):
     plt.clf()
     
     fig = plt.figure()
-    plt.scatter(df_processed['SALINITY'],df_processed['OCEANTEMP'], s=10, c=df_processed['Cluster Class'], edgecolor='none')  
+    plt.scatter(df_processed['SALINITY'],df_processed['OCEANTEMP'], s=20, c=df_processed['Cluster Class'], edgecolor='none')  
+    plt.xlim(32, 35)
     plt.xlabel("Salinity")
     plt.ylabel("Temperature")    
     plt.savefig(TempSalFile)
