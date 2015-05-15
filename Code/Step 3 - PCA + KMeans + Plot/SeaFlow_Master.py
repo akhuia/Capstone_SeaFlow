@@ -27,6 +27,8 @@ def CreateList(Locale):
 
 def Create_Principal_Components(f):
     MatrixDict = {}
+    MatrixDict['day'] = []
+    MatrixDict['file'] = []    
     MatrixDict['Eigenvalue0'] = []
     MatrixDict['Eigenvector01'] = []
     MatrixDict['Eigenvector02'] = [] 
@@ -35,11 +37,16 @@ def Create_Principal_Components(f):
     MatrixDict['Eigenvector11'] = []
     MatrixDict['Eigenvector12'] = [] 
     MatrixDict['Eigenvector13'] = []         
-    source = pd.read_csv(f, usecols=['fsc_adj','chl_adj','pe_adj'])    
+    source = pd.read_csv(f, usecols=['fsc_adj','chl_adj','pe_adj'])
+    GetFileVariables = pd.read_csv(f, usecols=['Day','File_Id'])
+    Day = GetFileVariables.at[0,'Day']
+    FileID = GetFileVariables.at[0,'File_Id']
     newsource = source - source.mean()    
     evals, evecs = np.linalg.eig((newsource.cov()).T)
     order = evals.argsort()[::-1]
     NewList = [evals[order[0]]] + [i for i in evecs[:,order[0]]] + [evals[order[1]]] + [i for i in evecs[:,order[1]]]
+    MatrixDict['day'].append(Day)
+    MatrixDict['file'].append(FileID)
     MatrixDict['Eigenvalue0'].append(NewList[0])
     MatrixDict['Eigenvector01'].append(NewList[1])
     MatrixDict['Eigenvector02'].append(NewList[2])
@@ -54,7 +61,7 @@ def Create_Principal_Components(f):
 def Compute_Silhouette_Score(f):
     NoOfClusters = collections.defaultdict()
     Get_PCA_Data = np.genfromtxt(f, delimiter=",", skiprows=1)
-    PCA_Data = Get_PCA_Data[:,[2,3,4]]
+    PCA_Data = Get_PCA_Data[:,[4,5,6]]
     for i in range(2,8):
         kmeans_model = KMeans(n_clusters=i, random_state=1).fit(PCA_Data)
         labels = kmeans_model.labels_  
@@ -62,29 +69,36 @@ def Compute_Silhouette_Score(f):
     return max(NoOfClusters.iteritems(), key=operator.itemgetter(1))[0]
 
 def Compute_KMeans(f,K):
-    FigFile = "C:\Users\NYU\EigenComponents" + ".png"
-    Get_PCA_Data = np.genfromtxt(f, delimiter=",", skiprows=1)
-    PCA_Data = Get_PCA_Data[:,[2,3,4,6,7,8]]
-    kmeans = KMeans(n_clusters=K)
-    kmeans.fit(PCA_Data)
+    ComponentsFile = "C:\Users\NYU\SeaFlowCapstone\EigenComponents" + ".png"
+    TempSalFile = "C:\Users\NYU\SeaFlowCapstone\SaLvTempComponents" + ".png"
+    CFilePath = "C:\\Users\\NYU\\SeaFlowCapstone\\ClusterLabels.csv"
+    df = pd.read_csv(f)
+    sliced = df.iloc[0:,[4,5,6,8,9,10]].dropna()
+    SVals = sliced.values
+    k_means = KMeans(n_clusters=K)
+    k_means.fit(SVals)
+    classified_data = k_means.labels_
+    df_processed = df.copy()
+    df_processed['Cluster Class'] = pd.Series(classified_data, index=df_processed.index)
+    df_processed.to_csv(CFilePath)
     #Plotting Figure Starts 
     fig = plt.figure(figsize=(20,10))    
     
     figure_title = "Component 1"
     
     plt.subplot(2,3,1)
-    plt.scatter(PCA_Data[:,0],PCA_Data[:,1], s=15, c=kmeans.labels_, edgecolor='none')
+    plt.scatter(df_processed['Eigenvector01'],df_processed['Eigenvector02'], s=10, c=df_processed['Cluster Class'], edgecolor='none')
     plt.xlabel("EVal 0 - EigenVector 1")
     plt.ylabel("EVal 0 - EigenVector 2")  
 
     ax = plt.subplot(2,3,2)
     plt.subplot(2,3,2)
-    plt.scatter(PCA_Data[:,1],PCA_Data[:,2], s=15, c=kmeans.labels_, edgecolor='none')
+    plt.scatter(df_processed['Eigenvector02'],df_processed['Eigenvector03'], s=10, c=df_processed['Cluster Class'], edgecolor='none')
     plt.xlabel("EVal 0 - EigenVector 2")
     plt.ylabel("EVal 0 - EigenVector 3")     
         
     plt.subplot(2,3,3)
-    plt.scatter(PCA_Data[:,0],PCA_Data[:,2], s=15, c=kmeans.labels_, edgecolor='none')
+    plt.scatter(df_processed['Eigenvector01'],df_processed['Eigenvector03'], s=10, c=df_processed['Cluster Class'], edgecolor='none')
     plt.xlabel("EVal 0 - EigenVector 1")
     plt.ylabel("EVal 0 - EigenVector 3") 
    
@@ -98,18 +112,18 @@ def Compute_KMeans(f,K):
     figure_title = "Component 2"
 
     plt.subplot(2,3,4)
-    plt.scatter(PCA_Data[:,3],PCA_Data[:,4], s=15, c=kmeans.labels_, edgecolor='none')
+    plt.scatter(df_processed['Eigenvector11'],df_processed['Eigenvector12'], s=10, c=df_processed['Cluster Class'], edgecolor='none')
     plt.xlabel("EVal 1- EigenVector 1")
     plt.ylabel("EVal 1 - EigenVector 2")  
 
     ax = plt.subplot(2,3,5)
     plt.subplot(2,3,5)
-    plt.scatter(PCA_Data[:,4],PCA_Data[:,5], s=15, c=kmeans.labels_, edgecolor='none')
+    plt.scatter(df_processed['Eigenvector12'],df_processed['Eigenvector13'], s=10, c=df_processed['Cluster Class'], edgecolor='none')
     plt.xlabel("EVal 1 - EigenVector 2")
     plt.ylabel("EVal 1 - EigenVector 3")  
 
     plt.subplot(2,3,6)
-    plt.scatter(PCA_Data[:,3],PCA_Data[:,5], s=15, c=kmeans.labels_, edgecolor='none')
+    plt.scatter(df_processed['Eigenvector11'],df_processed['Eigenvector13'], s=10, c=df_processed['Cluster Class'], edgecolor='none')
     plt.xlabel("EVal 1 - EigenVector 1")
     plt.ylabel("EVal 1 - EigenVector 3")  
 
@@ -120,21 +134,31 @@ def Compute_KMeans(f,K):
          )           
        
     subplots_adjust(left=0.125, bottom=0.1, right=0.9, top=0.9, wspace=0.2, hspace=0.5)
-    plt.savefig(FigFile)
+    plt.savefig(ComponentsFile)
+    plt.clf()
+    
+    fig = plt.figure()
+    plt.scatter(df_processed['SALINITY'],df_processed['OCEANTEMP'], s=10, c=df_processed['Cluster Class'], edgecolor='none')  
+    plt.xlabel("Salinity")
+    plt.ylabel("Temperature")    
+    plt.savefig(TempSalFile)
     plt.clf()
 
 def main():
     ListofList = []
     Dict_KMeans = {}
     path = "C:\Users\NYU\Cap\*"
-    OPFile = 'C:\Users\NYU\Capstone.csv'
+    OPFile = 'C:\Users\NYU\SeaFlowCapstone\Capstone.csv'
+    MergedFilePath = 'C:\\Users\\NYU\\SeaFlowCapstone\\Merged.csv'
+    EnvironmentVariables = 'C:\\Users\\NYU\\armbrustlab-seaflow-Tokyo3_sds.csv'
     FileList = CreateList(path)
     for i in FileList:
-        Dict_KMeans = Counter(Dict_KMeans) + Counter(Create_Principal_Components(i))
-    FinalMatrix = pd.DataFrame(Dict_KMeans, columns=['Eigenvalue0','Eigenvector01','Eigenvector02','Eigenvector03','Eigenvalue1','Eigenvector11','Eigenvector12','Eigenvector13'])
-    FinalMatrix.to_csv(OPFile)
-    Compute_KMeans(OPFile,Compute_Silhouette_Score(OPFile))
-    
+        Dict_KMeans = Counter(Dict_KMeans) + Counter(Create_Principal_Components(i)) 
+    FinalMatrix = pd.DataFrame(Dict_KMeans, columns=['day','file','Eigenvalue0','Eigenvector01','Eigenvector02','Eigenvector03','Eigenvalue1','Eigenvector11','Eigenvector12','Eigenvector13'])
+    EnvVarFile = pd.read_csv(EnvironmentVariables, usecols=['day','file','LAT','LON','OCEANTEMP','SALINITY'])
+    MergedFile = pd.merge(FinalMatrix,EnvVarFile, on=['day','file'])
+    MergedFile.to_csv(MergedFilePath)
+    Compute_KMeans(MergedFilePath,Compute_Silhouette_Score(MergedFilePath))
     
 if __name__ == "__main__":
     main()
