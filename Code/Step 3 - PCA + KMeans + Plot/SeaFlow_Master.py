@@ -15,6 +15,7 @@ import warnings
 import matplotlib.pylab
 from collections import Counter
 warnings.filterwarnings("ignore", 'Mean of empty slice.')
+from mpl_toolkits.basemap import Basemap, cm
 from sklearn.cluster import KMeans
 from sklearn import metrics
 from pylab import *
@@ -67,6 +68,37 @@ def Compute_Silhouette_Score(f):
         labels = kmeans_model.labels_  
         NoOfClusters[i] = metrics.silhouette_score(PCA_Data, labels, metric='euclidean')
     return max(NoOfClusters.iteritems(), key=operator.itemgetter(1))[0]
+
+def Plot_Voyage(Cruise, f):
+    VoyageImage = "C:\Users\NYU\SeaFlowCapstone\Voyage" + ".png"
+    source = pd.read_csv(f, usecols=['LAT', 'LON', 'OCEANTEMP', 'SALINITY', 'Cluster Class'])
+    x = (source['LON']).values 
+    y = (source['LAT']).values 
+    z = (source['Cluster Class']).values 
+    
+    GetFileVariables = pd.read_csv(Cruise, usecols=['Cruise'])
+    Cruise = GetFileVariables.at[0,'Cruise']    
+    
+    x[x<0]= 360+x[x<0];
+    xew = x
+    xew[xew>180] = xew[xew>180]-360
+    source['LON'] = xew
+    fig1 = plt.figure(1, figsize=(15,9))
+    m = Basemap(width=12000000,height=9000000,projection='lcc',
+                resolution='c',lat_1=15.,lat_2=60,lat_0=45,lon_0=-180.)
+    m.drawcoastlines()
+    m.drawmapboundary(fill_color='white')
+    m.fillcontinents(color='grey',lake_color='white')
+    xm, ym = m(xew,y)
+    colors = ['r', 'g', 'b']
+    markers = ['o','^','v']
+    for i,f in enumerate(xm):
+        m.scatter(xm[i], ym[i], s=30, marker=markers[z[i]], c=colors[z[i]], edgecolor='none')
+    m.drawparallels(np.arange(10,90,20),labels=[1,1,0,1])
+    m.drawmeridians(np.arange(-180,180,30),labels=[1,1,0,1])     
+    plt.savefig(VoyageImage)
+    plt.clf()        
+
 
 def Compute_KMeans(f,K):
     ComponentsFile = "C:\Users\NYU\SeaFlowCapstone\EigenComponents" + ".png"
@@ -137,30 +169,35 @@ def Compute_KMeans(f,K):
     plt.savefig(ComponentsFile)
     plt.clf()
     
+    colors = ['r', 'g', 'b']
+    markers = ['o','^','v']    
     fig = plt.figure()
-    plt.scatter(df_processed['SALINITY'],df_processed['OCEANTEMP'], s=20, c=df_processed['Cluster Class'], edgecolor='none')  
+    for i, f in enumerate(df_processed['SALINITY']):
+        plt.scatter(df_processed['SALINITY'].values[i],df_processed['OCEANTEMP'].values[i], s=20, marker=markers[df_processed['Cluster Class'].values[i]], c=colors[df_processed['Cluster Class'].values[i]], edgecolor='none')  
     plt.xlim(32, 35)
     plt.xlabel("Salinity")
     plt.ylabel("Temperature")    
     plt.savefig(TempSalFile)
     plt.clf()
+    return CFilePath
 
 def main():
-    ListofList = []
-    Dict_KMeans = {}
+    #ListofList = []
+    #Dict_KMeans = {}
     path = "C:\Users\NYU\Cap\*"
-    OPFile = 'C:\Users\NYU\SeaFlowCapstone\Capstone.csv'
+    #OPFile = 'C:\Users\NYU\SeaFlowCapstone\Capstone.csv'
     MergedFilePath = 'C:\\Users\\NYU\\SeaFlowCapstone\\Merged.csv'
-    EnvironmentVariables = 'C:\\Users\\NYU\\armbrustlab-seaflow-Tokyo3_sds.csv'
+    #EnvironmentVariables = 'C:\\Users\\NYU\\armbrustlab-seaflow-Tokyo3_sds.csv'
     FileList = CreateList(path)
-    for i in FileList:
-        Dict_KMeans = Counter(Dict_KMeans) + Counter(Create_Principal_Components(i)) 
-    FinalMatrix = pd.DataFrame(Dict_KMeans, columns=['day','file','Eigenvalue0','Eigenvector01','Eigenvector02','Eigenvector03','Eigenvalue1','Eigenvector11','Eigenvector12','Eigenvector13'])
-    FinalMatrix.to_csv(OPFile)
-    EnvVarFile = pd.read_csv(EnvironmentVariables, usecols=['day','file','LAT','LON','OCEANTEMP','SALINITY'])
-    MergedFile = pd.merge(FinalMatrix,EnvVarFile, on=['day','file'])
-    MergedFile.to_csv(MergedFilePath)
-    Compute_KMeans(MergedFilePath,Compute_Silhouette_Score(MergedFilePath))
+    #for i in FileList:
+    #    Dict_KMeans = Counter(Dict_KMeans) + Counter(Create_Principal_Components(i)) 
+    #FinalMatrix = pd.DataFrame(Dict_KMeans, columns=['day','file','Eigenvalue0','Eigenvector01','Eigenvector02','Eigenvector03','Eigenvalue1','Eigenvector11','Eigenvector12','Eigenvector13'])
+    #FinalMatrix.to_csv(OPFile)
+    #EnvVarFile = pd.read_csv(EnvironmentVariables, usecols=['day','file','LAT','LON','OCEANTEMP','SALINITY'])
+    #MergedFile = pd.merge(FinalMatrix,EnvVarFile, on=['day','file'])
+    #MergedFile.to_csv(MergedFilePath)
+    FilePath = Compute_KMeans(MergedFilePath,Compute_Silhouette_Score(MergedFilePath))
+    Plot_Voyage(FileList[0], FilePath)
     
 if __name__ == "__main__":
     main()
