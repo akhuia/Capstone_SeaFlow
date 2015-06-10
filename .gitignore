@@ -7,6 +7,9 @@ Icon
 *.DS_Store
 *.ini
 
+#For excluding the big files (~20GB)
+Capstone_Seaflow.twbx
+seaflow_data_All.csv
  
 # Logs and databases #
 ######################
