@@ -1,0 +1,949 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='win' version='9.0' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 9000.15.0506.1800                                -->
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='seaflow_data_New' inline='true' name='textscan.42147.665149456021' version='9.0'>
+      <connection class='textscan' directory='E:/seaflow myria dataset' filename='seaflow_data_New.csv' password='' server=''>
+        <relation name='seaflow_data_New#csv' table='[seaflow_data_New#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Cruise' ordinal='0' />
+            <column datatype='string' name='Day' ordinal='1' />
+            <column datatype='integer' name='File_Id' ordinal='2' />
+            <column datatype='real' name='fsc_adj' ordinal='3' />
+            <column datatype='real' name='chl_adj' ordinal='4' />
+            <column datatype='real' name='pe_adj' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Cruise</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Cruise]</local-name>
+            <parent-name>[seaflow_data_New#csv]</parent-name>
+            <remote-alias>Cruise</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Day</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Day]</local-name>
+            <parent-name>[seaflow_data_New#csv]</parent-name>
+            <remote-alias>Day</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>File_Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[File_Id]</local-name>
+            <parent-name>[seaflow_data_New#csv]</parent-name>
+            <remote-alias>File_Id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fsc_adj</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[fsc_adj]</local-name>
+            <parent-name>[seaflow_data_New#csv]</parent-name>
+            <remote-alias>fsc_adj</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>chl_adj</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[chl_adj]</local-name>
+            <parent-name>[seaflow_data_New#csv]</parent-name>
+            <remote-alias>chl_adj</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pe_adj</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[pe_adj]</local-name>
+            <parent-name>[seaflow_data_New#csv]</parent-name>
+            <remote-alias>pe_adj</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name></remote-name>
+            <remote-type>0</remote-type>
+            <parent-name>[seaflow_data_New#csv]</parent-name>
+            <remote-alias></remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='File Id' datatype='integer' name='[File_Id]' role='dimension' type='ordinal'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Chl Adj' datatype='real' name='[chl_adj]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Fsc Adj' datatype='real' name='[fsc_adj]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Pe Adj' datatype='real' name='[pe_adj]' role='measure' type='quantitative'>
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='ClusterLabels (Final_Join(ClustLatSalTempEVal))' inline='true' name='excel-direct.42147.665772013890' version='9.0'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='E:\seaflow myria dataset\Final_Join(ClustLatSalTempEVal).xlsx' password='' server='' validate='no'>
+        <relation name='ClusterLabels$' table='[ClusterLabels$]' type='table'>
+          <columns header='yes' outcome='6'>
+            <column datatype='integer' name='Record#' ordinal='0' />
+            <column datatype='integer' name='Unnamed: 0' ordinal='1' />
+            <column datatype='string' name='day' ordinal='2' />
+            <column datatype='integer' name='File Id' ordinal='3' />
+            <column datatype='real' name='Eigenvalue0' ordinal='4' />
+            <column datatype='real' name='Eigenvector01' ordinal='5' />
+            <column datatype='real' name='Eigenvector02' ordinal='6' />
+            <column datatype='real' name='Eigenvector03' ordinal='7' />
+            <column datatype='real' name='Eigenvalue1' ordinal='8' />
+            <column datatype='real' name='Eigenvector11' ordinal='9' />
+            <column datatype='real' name='Eigenvector12' ordinal='10' />
+            <column datatype='real' name='Eigenvector13' ordinal='11' />
+            <column datatype='real' name='LAT' ordinal='12' />
+            <column datatype='real' name='LON' ordinal='13' />
+            <column datatype='real' name='OCEANTEMP' ordinal='14' />
+            <column datatype='real' name='SALINITY' ordinal='15' />
+            <column datatype='integer' name='Cluster Class' ordinal='16' />
+          </columns>
+        </relation>
+        <refresh increment-key='' incremental-updates='false'>
+        </refresh>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Record#</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Record#]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Record#</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unnamed: 0</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Unnamed: 0]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Unnamed: 0</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[day]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>day</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>File Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[File Id]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>File Id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Eigenvalue0</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Eigenvalue0]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Eigenvalue0</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Eigenvector01</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Eigenvector01]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Eigenvector01</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Eigenvector02</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Eigenvector02]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Eigenvector02</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Eigenvector03</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Eigenvector03]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Eigenvector03</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Eigenvalue1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Eigenvalue1]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Eigenvalue1</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Eigenvector11</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Eigenvector11]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Eigenvector11</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Eigenvector12</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Eigenvector12]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Eigenvector12</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Eigenvector13</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Eigenvector13]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Eigenvector13</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LAT</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LAT]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>LAT</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LON</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LON]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>LON</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OCEANTEMP</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[OCEANTEMP]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>OCEANTEMP</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SALINITY</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SALINITY]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>SALINITY</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster Class</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cluster Class]</local-name>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias>Cluster Class</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name></remote-name>
+            <remote-type>0</remote-type>
+            <parent-name>[ClusterLabels$]</parent-name>
+            <remote-alias></remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[File Id]' role='dimension' type='ordinal'>
+      </column>
+      <column aggregation='Avg' datatype='real' name='[LAT]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative'>
+      </column>
+      <column aggregation='Avg' datatype='real' name='[LON]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Oceantemp' datatype='real' name='[OCEANTEMP]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Salinity' datatype='real' name='[SALINITY]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Day' datatype='string' name='[day]' role='dimension' type='nominal'>
+      </column>
+      <extract count='-1' enabled='true' units='records'>
+        <connection class='dataengine' dbname='C:\Users\AK\Downloads\ClusterLabels (Final_Join(ClustLatSalTempEVal)).tde' schema='Extract' tablename='Extract' update-time='05/23/2015 10:59:42 PM'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <calculations>
+            <calculation column='[Number of Records]' formula='1' />
+          </calculations>
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='5353' timestamp-start='2015-05-23 22:59:42.535' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Cluster Class</remote-name>
+              <remote-type>16</remote-type>
+              <local-name>[Cluster Class]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Cluster Class</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='integer'>0</statistic>
+                <statistic aggregation='Max' datatype='integer'>1</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>1</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint8&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Eigenvalue0</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Eigenvalue0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Eigenvalue0</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>18322605.337530199</statistic>
+                <statistic aggregation='Max' datatype='real'>474849447.19838703</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Eigenvalue1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Eigenvalue1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Eigenvalue1</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>10903371.313642399</statistic>
+                <statistic aggregation='Max' datatype='real'>96644048.530541107</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Eigenvector01</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Eigenvector01]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Eigenvector01</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>-0.82686460285656105</statistic>
+                <statistic aggregation='Max' datatype='real'>0.98188619684567902</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Eigenvector02</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Eigenvector02]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Eigenvector02</remote-alias>
+              <ordinal>4</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>-0.77246740733706898</statistic>
+                <statistic aggregation='Max' datatype='real'>0.77620271483061698</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Eigenvector03</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Eigenvector03]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Eigenvector03</remote-alias>
+              <ordinal>5</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>-0.73352367778465799</statistic>
+                <statistic aggregation='Max' datatype='real'>0.98130163865442399</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Eigenvector11</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Eigenvector11]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Eigenvector11</remote-alias>
+              <ordinal>6</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>-0.71733907909698003</statistic>
+                <statistic aggregation='Max' datatype='real'>0.80202285305724996</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Eigenvector12</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Eigenvector12]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Eigenvector12</remote-alias>
+              <ordinal>7</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>-0.98151270244551403</statistic>
+                <statistic aggregation='Max' datatype='real'>0.83232597760985105</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Eigenvector13</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Eigenvector13]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Eigenvector13</remote-alias>
+              <ordinal>8</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>-0.69327702398330304</statistic>
+                <statistic aggregation='Max' datatype='real'>0.99944487649740399</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>File Id</remote-name>
+              <remote-type>2</remote-type>
+              <local-name>[File Id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>File Id</remote-alias>
+              <ordinal>9</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>497</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='integer'>1</statistic>
+                <statistic aggregation='Max' datatype='integer'>5030</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>2</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint16&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LAT</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[LAT]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LAT</remote-alias>
+              <ordinal>10</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5207</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>24.270202999999999</statistic>
+                <statistic aggregation='Max' datatype='real'>44.592350000000003</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LON</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[LON]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LON</remote-alias>
+              <ordinal>11</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5208</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>-179.99383999999901</statistic>
+                <statistic aggregation='Max' datatype='real'>179.9829</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Number of Records</remote-name>
+              <remote-type>16</remote-type>
+              <local-name>[Number of Records]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Number of Records</remote-alias>
+              <ordinal>12</ordinal>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='integer'>1</statistic>
+                <statistic aggregation='Max' datatype='integer'>1</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint8&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OCEANTEMP</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[OCEANTEMP]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>OCEANTEMP</remote-alias>
+              <ordinal>13</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5337</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>12.576132060000001</statistic>
+                <statistic aggregation='Max' datatype='real'>28.655841670000001</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Record#</remote-name>
+              <remote-type>2</remote-type>
+              <local-name>[Record#]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Record#</remote-alias>
+              <ordinal>14</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='integer'>0</statistic>
+                <statistic aggregation='Max' datatype='integer'>5352</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>2</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint16&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SALINITY</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[SALINITY]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SALINITY</remote-alias>
+              <ordinal>15</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5332</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='real'>32.531911360000002</statistic>
+                <statistic aggregation='Max' datatype='real'>70.194262120000005</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Unnamed: 0</remote-name>
+              <remote-type>2</remote-type>
+              <local-name>[Unnamed: 0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Unnamed: 0</remote-alias>
+              <ordinal>16</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5353</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Min' datatype='integer'>0</statistic>
+                <statistic aggregation='Max' datatype='integer'>5352</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>2</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (unique)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint16&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>day</remote-alias>
+              <ordinal>17</ordinal>
+              <family>ClusterLabels$</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <scale>1</scale>
+              <width>1073741823</width>
+              <contains-null>false</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;2011_262&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;2011_275&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US_CI&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>0</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='144' name='Sheet 1' width='174'>
+      iVBORw0KGgoAAAANSUhEUgAAAK4AAACQCAYAAACRfFAzAAAACXBIWXMAAB2HAAAdhwGP5fFl
+      AAABmUlEQVR4nO3SQQ0AIBDAMMC/58MDH7KkVbDH9szMgpjzOwBeGJck45JkXJKMS5JxSTIu
+      ScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45Jk
+      XJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYl
+      ybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKM
+      S5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgk
+      GZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5Jx
+      STIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck
+      45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuSRePYgUc7kJNEQAAAABJRU5ErkJg
+      gg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
